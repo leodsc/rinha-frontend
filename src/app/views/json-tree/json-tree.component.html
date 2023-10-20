@@ -1,0 +1,6 @@
+<main class="json-page">
+  <div class="json-page--container">
+    <h1 class="json-page--title">{{ json.name }}</h1>
+    <app-tree [isRoot]="true" [closeCurly]="false" [json]="json.content" />
+  </div>
+</main>

@@ -1,0 +1,27 @@
+@import "variables";
+
+.block-line {
+  border-left: 2px solid map-get($colors, gray);
+  padding-left: 10px;
+  margin-left: 5px;
+}
+
+.key-container {
+  gap: 0.25rem;
+  display: flex;
+}
+
+.key-name {
+  color: map-get($colors, accent-text);
+}
+
+.special-char {
+  color: map-get($colors, brackets);
+  font-weight: 800;
+  margin-left: 2.5px;
+}
+
+.key-index {
+  color: map-get($colors, gray);
+  font-weight: 500;
+}

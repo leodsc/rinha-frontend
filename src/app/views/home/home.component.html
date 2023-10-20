@@ -1,0 +1,17 @@
+<main class="home-page">
+  <h1 class="home-page--title">JSON Tree View</h1>
+  <p class="home-page--subtitle">
+    Simple JSON Viewer that runs completely on-client. No data exchange
+  </p>
+  <button class="home-page--load-json" (click)="loadJson()">Load JSON</button>
+  <input
+    class="home-page--input"
+    accept=".json"
+    type="file"
+    #input
+    (change)="fileUpload()"
+  />
+  <p class="home-page--error error-message" *ngIf="invalidFile">
+    Invalid file. Please load a valid JSON file.
+  </p>
+</main>

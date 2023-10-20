@@ -1,0 +1,10 @@
+@import "variables";
+
+.key-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.key-name {
+  color: map-get($colors, accent-text);
+}

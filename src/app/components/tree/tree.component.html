@@ -1,0 +1,29 @@
+<ng-container
+  *ngFor="
+    let item of json | keyvalue : util.keyValueOriginalOrder;
+    let i = index
+  "
+>
+  <div
+    *ngIf="i < currentMaximum"
+    [ngClass]="isRoot === false ? 'block-line' : null"
+  >
+    <div class="key-container" *ngIf="util.isJson(item.value)">
+      <p class="key-name">{{ item.key }}:</p>
+      <p class="special-char">{{ "{" }}</p>
+    </div>
+    <app-json-array
+      [key]="item.key"
+      *ngIf="util.isArray(item.value)"
+      [array]="item.value"
+    />
+    <app-tree *ngIf="util.isJson(item.value)" [json]="item.value" />
+    <app-json-property
+      *ngIf="util.isPrimitive(item.value)"
+      [key]="item.key"
+      [value]="item.value"
+    />
+  </div>
+</ng-container>
+
+<p *ngIf="closeCurly" class="special-char">{{ "}" }}</p>
